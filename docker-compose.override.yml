@@ -1,0 +1,15 @@
+version: '3.7'
+
+networks:
+  localstack-net:
+    external: true
+
+services:
+  localstack.api:
+    networks:
+      - default
+      - localstack-net
+    ports:
+      - "1001:80"
+      - "1002:443"        
+    env_file: docker-compose.env  

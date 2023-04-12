@@ -1,0 +1,18 @@
+version: '3.7'
+
+networks:
+  localstack-net:
+    external: true
+
+services:
+  localstack-setup:
+    build:
+      context: ./setup/aws-setup
+    networks:
+      - default
+      - localstack-net
+    environment:
+      - AWS_SECRET_ACCESS_KEY=DUMMY_KEY
+      - AWS_ACCESS_KEY_ID=DUMMY_KEY
+      - AWS_DEFAULT_REGION=eu-west-1
+      - AWS_REGION=eu-west-1

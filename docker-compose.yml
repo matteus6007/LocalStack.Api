@@ -1,0 +1,15 @@
+version: '3.7'
+
+networks:
+  localstack-net:
+    external: true
+
+services:
+  localstack.api:
+    networks:
+      - default
+      - localstack-net  
+    image: localstack.api
+    build:
+      context: .
+      dockerfile: src/LocalStack.Api/Dockerfile

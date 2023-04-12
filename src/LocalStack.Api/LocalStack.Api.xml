@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocalStack.Api</name>
+    </assembly>
+    <members>
+        <member name="T:LocalStack.Api.Controllers.AccountsController">
+            <summary>
+            Manage Accounts
+            </summary>
+        </member>
+        <member name="M:LocalStack.Api.Controllers.AccountsController.#ctor(LocalStack.Api.Domain.Services.IAccountsService)">
+            <summary>
+            Manage Accounts
+            </summary>
+            <param name="accountsService">Accounts Service</param>
+        </member>
+        <member name="M:LocalStack.Api.Controllers.AccountsController.Create(LocalStack.Api.Contracts.Requests.CreateAccountRequestV1)">
+            <summary>
+            Create new Account
+            </summary>
+            <param name="request">Create Account request</param>
+            <returns>New <see cref="T:LocalStack.Api.Contracts.Models.AccountV1"/></returns>
+            <response code="201">Account created</response>
+            <response code="400">Request is not valid</response>
+        </member>
+        <member name="M:LocalStack.Api.Controllers.AccountsController.GetById(System.Guid)">
+            <summary>
+            Get Account by ID
+            </summary>
+            <param name="id">Account ID</param>
+            <returns><see cref="T:LocalStack.Api.Contracts.Models.AccountV1"/></returns>
+            <response code="200">Account returned</response>
+            <response code="404">Account not found</response>
+        </member>
+        <member name="M:LocalStack.Api.Controllers.AccountsController.GetAll">
+            <summary>
+            Get all Accounts
+            </summary>
+            <returns><see cref="T:System.Collections.Generic.List`1"/></returns>
+            <response code="200">Accounts returned</response>
+        </member>
+    </members>
+</doc>
